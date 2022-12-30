@@ -1,0 +1,25 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+
+  <h1> Create new Task </h1>
+  
+  {% comment %} <input type="text">
+  <textarea name="description" id="" cols="30" rows="10"></textarea> {% endcomment %}
+
+  {% comment %} <form action="">
+    {{form.as_p}}
+    <button>
+      Save
+    </button>
+  </form> {% endcomment %}
+
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>
+      Save
+    </button>
+  </form>
+
+{% endblock %}

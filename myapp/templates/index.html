@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+{% block content %}
+  <html>
+    <head>
+      <title>{{ title }}</title>
+    </head>
+    <body>
+      <h1>This is a Heading</h1>
+
+      <img src="{% static 'png.png' %}" alt="Flying Tigers" width="600">
+
+      <p>This is a paragraph.</p>
+      <p>{% lorem 1 b random %}</p>
+    </body>
+  </html>
+{% endblock %}

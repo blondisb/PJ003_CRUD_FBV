@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+{% extends 'layouts/base.html' %}
+{% block content %}
+
+
+<html>
+  <head>
+    <title>Tasks</title>
+  </head>
+  <body>
+    <h1>Tasks</h1>
+    <p>This is a paragraph.</p>
+    <p>{% lorem 1 b random %}</p>
+    
+    {% for task in OB_task %}
+      <div>
+        
+        <h3>
+          {% if task.state == True %}
+            &#9773;
+          {% else %}
+            &#9203;
+          {% endif %}
+
+          {{task.tittle}}
+        </h3>
+        
+        {% comment %} {% if task.state == True %}
+          <p>Task done succesful</p>
+        {% else %}
+          <p>Pending task</p>
+        {% endif %} {% endcomment %}
+        
+        <p>
+          {{task.descrip}} |
+          {{task.project.name}} |
+          {{task.project.id}}
+        </p>
+
+        <button>
+          Delete
+        </button>
+
+        <button>   	
+            &#9773; XOP
+        </button>
+      </div>
+    {% endfor %}
+
+  </body>
+</html>
+
+{% endblock %}

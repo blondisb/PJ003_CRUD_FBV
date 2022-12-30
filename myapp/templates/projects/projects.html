@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+{% extends 'layouts/base.html' %}
+{% block content %}
+
+<html>
+  <head>
+    <title>Projects</title>
+  </head>
+  <body>
+    <h1>Projects</h1>
+    <p>{{OB_project}}</p>
+    <p>{% lorem 1 b random %}</p>
+    
+    {% for project in OB_project%}
+
+      <article class="card">
+        <a href={% url 'URL_projectdetails' project.id%}>
+          <h4> {{project.name}} </h4>
+        </a>
+        </article>
+
+    {% endfor %}
+    
+  </body>
+</html>
+
+{% endblock %}

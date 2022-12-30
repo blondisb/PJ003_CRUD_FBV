@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html'%}
+
+{% block content %}
+    <h1>PJDTL</h1>
+    <h3>{{ project.id }} {{ project.name }}</h3> 
+
+    {% for task in rel_tasks %}
+        <div class="card">
+            <h4>{{ task.tittle }} : {{ task.descrip }}</h4>
+        </div>
+    {% endfor %}
+     
+
+{% endblock %}
