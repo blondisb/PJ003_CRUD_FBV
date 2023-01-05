@@ -10,6 +10,9 @@
     <body>
       <h1>This is a Heading</h1>
 
+      {% comment %} <img src="{{ graph | safe }}" alt="Graph" width="600"> {% endcomment %}
+      {{ graph | safe }}
+
       <img src="{% static 'png.png' %}" alt="Flying Tigers" width="600">
 
       <p>This is a paragraph.</p>

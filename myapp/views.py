@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, get_list_or_404, redirec
 from django.http import HttpResponse, JsonResponse, Http404
 from .models import MO_project, MO_task, MO_deleteme
 from . import forms as fo
+from . import graph as ga
 
 # Create your views here.
 
@@ -9,8 +10,11 @@ from . import forms as fo
 def VW_home(request):
     # return HttpResponse('Home')
     title = 'Welcome 2 Jamrock'
+    graph = ga.make_graph()
+    # context['graph'] = ga.make_graph()
     return render(request, 'index.html', {
-        'title': title
+        'title': title,
+        'graph': graph
     })
 
 
